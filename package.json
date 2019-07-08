@@ -1,0 +1,26 @@
+{
+  "name": "brainfuckify",
+  "version": "0.0.1",
+  "description": "Turns some text into valid BF code.",
+  "main": "./src/brainfuckify.js",
+  "scripts": {
+    "test": "mocha ./test/**/*.spec.js",
+    "test:debug": "mocha ./test/**/*.spec.js"
+  },
+  "keywords": [
+    "bf",
+    "brainfuck",
+    "esolang"
+  ],
+  "author": "Johnny Reina <johnny.r.reina@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "brainfuck-node": "^1.0.2",
+    "chai": "^4.2.0",
+    "mocha": "^6.1.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jreina/brainfuckify"
+  }
+}
