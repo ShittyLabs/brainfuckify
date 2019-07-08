@@ -11,7 +11,3 @@ module.exports = function brainfuckify(text) {
     .map(asciiValue => repeat('+', asciiValue))
     .join('.>\r') + '.';
 };
-const tap = x => {
-  console.log(x);
-  return x;
-};
