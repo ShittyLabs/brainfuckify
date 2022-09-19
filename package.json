@@ -4,10 +4,21 @@
   "description": "Turns some text into valid BF code.",
   "main": "lib/brainfuckify.js",
   "types": "types/brainfuckify.d.ts",
+  "files": [
+    "lib/",
+    "types/",
+    "dist/"
+  ],
   "scripts": {
     "lint": "eslint lib/**/*.js __tests__/**/*.js scripts/**/*.js",
     "build:ts-def": "tsc lib/brainfuckify.js --declaration --allowJs --emitDeclarationOnly --outDir ./types",
     "build:browser": "node scripts/bundle.js",
+    "build": "run-p build:*",
+    "clean": "rimraf dist/ types/",
+    "prepack": "yarn clean && yarn build",
+    "postpack": "yarn clean",
+    "prepublish": "in-publish && yarn clean && yarn build || not-in-publish",
+    "postpublish": "yarn clean",
     "test": "jest",
     "coverage": "jest --coverage"
   },
@@ -23,7 +34,10 @@
     "eslint": "^8.23.1",
     "eslint-plugin-jest": "^27.0.4",
     "hirnfick": "^7.0.0",
+    "in-publish": "^2.0.1",
     "jest": "^29.0.3",
+    "npm-run-all": "^4.1.5",
+    "rimraf": "^3.0.2",
     "typescript": "^4.8.3"
   },
   "repository": {
