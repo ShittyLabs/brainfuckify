@@ -2,10 +2,12 @@
   "name": "brainfuckify",
   "version": "0.0.2",
   "description": "Turns some text into valid BF code.",
-  "lib": "./lib/brainfuckify.js",
+  "main": "lib/brainfuckify.js",
+  "types": "types/brainfuckify.d.ts",
   "scripts": {
-    "lint": "eslint lib/**/*.js __tests__/**/*.js",
+    "lint": "eslint lib/**/*.js __tests__/**/*.js scripts/**/*.js",
     "build:ts-def": "tsc lib/brainfuckify.js --declaration --allowJs --emitDeclarationOnly --outDir ./types",
+    "build:browser": "node scripts/bundle.js",
     "test": "jest",
     "coverage": "jest --coverage"
   },
@@ -17,6 +19,7 @@
   "author": "Johnny Reina <johnny.r.reina@gmail.com>",
   "license": "MIT",
   "devDependencies": {
+    "esbuild": "^0.15.8",
     "eslint": "^8.23.1",
     "eslint-plugin-jest": "^27.0.4",
     "hirnfick": "^7.0.0",
